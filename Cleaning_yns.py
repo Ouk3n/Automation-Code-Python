@@ -114,18 +114,12 @@ def lot_changes(row):                                                        # U
 df3.loc[:, 'LOT'] = df3.apply(lot_changes, axis=1)   # Applying above function with also creating LOT new column (this function would create new column LOT)
 
 today_str = datetime.today().strftime('%Y-%m-%d')
-filename = f"DATA_{today_str}.xlsx"
+filename = f"YNS_DATA_{today_str}.xlsx"
 
 df3.to_excel(filename,index=False)
 print(df3.head())
 
+print(filename)
 
 end = time.time()
 print(f'Execution time: {end - start:.4f} seconds')
-NFINITY ENTERPRISES']:
-            return '4P PARTY'
-        else:
-            return 'PARTY'
-        
-mask_entity = df3['ENTITYTYPE'] == 'OTHER PERSON'
-df3.loc[mask_entity, 'DEPT GRP'] = df3.loc[mask_entity].apply(e

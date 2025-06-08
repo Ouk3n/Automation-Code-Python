@@ -162,27 +162,3 @@ print(df3.head(1))
 
 end = time.time()
 print(f'Execution time: {end - start:.4f} seconds')
-   return '0.50-0.699'
-    elif 0.70<= size <=0.999:
-        return '0.70-0.999'
-    elif 1.00<= size <=1.499:
-        return '1.00-1.499'
-    elif 1.50<= size <=1.999:
-        return '1.50-1.999'
-    else:
-        return '2 & Up'
-    
-
-df3['Size Range']=df3['Weight'].apply(assign_size_range) # Creating new column for Size Range based on function 
-
-
-df3=df3.loc[:,['STONE_ID','Color','Clarity','Cut','Polish','Symmetry','Fluorescence','Return Date','Pred Shape', 'Pred Cut', 'Pred Color', 'Pred Clarity', 'Pred Polish',
-       'Pred Symmetry', 'Pred Fluorescence','GIA vs PRED color','Fl GIA VS PRED','Clarity GIA vs PRED','CUT GIA vs PRED','POLISH GIA vs PRED','Symmetry GIA vs PRED',
-       'Size Range']]       # Including only needed columns for our report final data
-
-
-today_str = datetime.today().strftime('%Y-%m-%d')
-filename=f'GIA VS PRED_{today_str}.xlsx'
-
-df3.to_excel(filename,index=False)
-p
